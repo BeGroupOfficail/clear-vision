@@ -512,7 +512,7 @@ animateBars();
             spaceBetween: 24,
             slidesPerGroup: 1,
             loop: true,
-            autoplay: false,
+            autoplay: true,
             grabcursor: true,
             speed: 800,
             breakpoints: {
@@ -536,7 +536,7 @@ animateBars();
             spaceBetween: 24,
             slidesPerGroup: 1,
             loop: false,
-            autoplay: false,
+            autoplay: true,
             grabcursor: true,
             speed: 800,
             breakpoints: {
@@ -1592,3 +1592,33 @@ animateBars();
     });
 
 })(jQuery);
+
+
+const items = document.querySelectorAll(".gallary-item-inner");
+const popup = document.getElementById("videoPopup");
+const popupVideo = document.getElementById("popupVideo");
+const closeBtn = document.getElementById("closePopup");
+const overlay = document.querySelector(".popup-overlay");
+
+// open popup
+items.forEach(item => {
+    item.addEventListener("click", () => {
+        const videoSrc = item.getAttribute("data-video");
+
+        popup.style.display = "flex";
+        popupVideo.src = videoSrc;
+        popupVideo.play();
+    });
+});
+
+// close popup
+function closePopup() {
+    popup.style.display = "none";
+    popupVideo.pause();
+    popupVideo.src = "";
+}
+
+closeBtn.addEventListener("click", closePopup);
+overlay.addEventListener("click", closePopup);
+
+

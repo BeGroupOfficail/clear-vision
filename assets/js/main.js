@@ -50,6 +50,42 @@ tabs.forEach(tab => {
     });
 
 });
+
+document.querySelectorAll(".gallery-scroll-wrap").forEach(track => {
+
+    let isDown = false;
+    let startX;
+    let scrollX = 0;
+    let prevTranslate = 0;
+
+    track.addEventListener("pointerdown", (e) => {
+        isDown = true;
+        startX = e.clientX;
+
+        track.classList.add("dragging");
+        track.setPointerCapture(e.pointerId);
+    });
+
+    track.addEventListener("pointermove", (e) => {
+        if (!isDown) return;
+
+        const moveX = e.clientX - startX;
+
+        scrollX = prevTranslate + moveX;
+
+        track.style.transform = `translateX(${scrollX}px)`;
+    });
+
+    function stopDrag() {
+        isDown = false;
+        prevTranslate = scrollX;
+        track.classList.remove("dragging");
+    }
+
+    track.addEventListener("pointerup", stopDrag);
+    track.addEventListener("pointercancel", stopDrag);
+
+});
     /*======================================
         Preloader activation
     ========================================*/

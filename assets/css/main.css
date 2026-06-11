@@ -368,7 +368,7 @@ ul {
 .section-heading .sub-heading {
     font-family: var(--tl-ff-heading);
     color: white;
-    font-size: 12px;
+    font-size: 24px;
     font-weight: 400;
     padding: 7px 19px 7px 28px;
     display: inline-block;
@@ -19042,5 +19042,57 @@ blockquote .content .author {
   transform: scale(1.15);
 }
 
+.footer-section{
+    position: relative;
+    background: #0a1e1d; /* اللون الأساسي */
+    color: #fff;
+    overflow: hidden;
+}
 
+/* لو عندك صورة خلفية خليها subtle */
+.footer-bg{
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.06; /* خفيفة جدًا */
+    z-index: 0;
+}
 
+/* المحتوى فوق الخلفية */
+.footer-section .container,
+.footer-section .copyright-area{
+    position: relative;
+    z-index: 2;
+}
+.gallary-section{
+    overflow: hidden;
+    width: 100%;
+}
+
+.gallery-scroll-wrap{
+    display: flex;
+    gap: 20px;
+    cursor: grab;
+    user-select: none;
+    will-change: transform;
+}
+
+.gallery-scroll-wrap.dragging{
+    cursor: grabbing;
+}
+
+.gallary-scroll-item{
+    flex: 0 0 auto;
+    width: 320px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.gallary-scroll-item img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    pointer-events: none; /* مهم جدًا */
+}

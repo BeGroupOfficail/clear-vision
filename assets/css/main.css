@@ -2811,7 +2811,7 @@ ul {
 .header .primary-header-inner .header-left-wrap {
     display: flex;
     align-items: center;
-    column-gap: 70px;
+    column-gap: 50px;
 }
 
 .header .primary-header-inner .header-logo img {

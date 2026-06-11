@@ -2,9 +2,54 @@
 (function ($) {
     "use strict";
 
+const openBtn = document.querySelector(".sidebar-trigger.open");
+const closeBtn = document.querySelector(".mobile-side-menu-close");
+const menu = document.querySelector(".mobile-side-menu");
+const overlay = document.querySelector(".mobile-side-menu-overlay");
+
+function openMenu(){
+    menu.classList.add("active");
+    overlay.classList.add("active");
+}
+
+function closeMenu(){
+    menu.classList.remove("active");
+    overlay.classList.remove("active");
+}
+
+openBtn.addEventListener("click", openMenu);
+closeBtn.addEventListener("click", closeMenu);
+overlay.addEventListener("click", closeMenu);
+
     // Get Device width
     var device_width = window.innerWidth;
 
+
+
+const tabs = document.querySelectorAll(".branch-btn");
+const contents = document.querySelectorAll(".branch-content");
+
+tabs.forEach(tab => {
+
+    tab.addEventListener("click", () => {
+
+        tabs.forEach(btn =>
+            btn.classList.remove("active")
+        );
+
+        contents.forEach(content =>
+            content.classList.remove("active")
+        );
+
+        tab.classList.add("active");
+
+        document
+            .getElementById(tab.dataset.target)
+            .classList.add("active");
+
+    });
+
+});
     /*======================================
         Preloader activation
     ========================================*/

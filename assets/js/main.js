@@ -109,16 +109,20 @@ const partnersSlider = new Swiper(".partners-slider", {
   loop: true,
   slidesPerView: "auto",
   spaceBetween: 60,
-
   speed: 6000,
 
   autoplay: {
     delay: 0,
     disableOnInteraction: false,
+    pauseOnMouseEnter: false,
   },
 
-  freeMode: true,
-  freeModeMomentum: false,
+  freeMode: {
+    enabled: true,
+    momentum: false,
+  },
+
+  allowTouchMove: false,
 });
     /*======================================
         Preloader activation

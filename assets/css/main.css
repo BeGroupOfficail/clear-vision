@@ -19139,9 +19139,24 @@ blockquote .content .author {
     height: 220px;
     object-fit: cover;
     display: block;
-    pointer-events: none; /* مهم جدًا */
+    pointer-events: none;
 }
 
+@media (max-width: 767px) {
+    .gallary-scroll-item {
+        width: 85vw;
+        border-radius: 12px;
+    }
+
+    .gallary-scroll-item img {
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    .gallery-scroll-wrap {
+        gap: 12px;
+    }
+}
 .partners-section {
   overflow: hidden;
 }
@@ -19165,12 +19180,10 @@ blockquote .content .author {
   width: 100%;
   height: auto;
   object-fit: contain;
-  opacity: 0.7;
   transition: 0.3s;
 }
 
 .partners-slider img:hover {
-  opacity: 1;
   transform: scale(1.08);
 }
 .partners-slider .swiper-wrapper {
@@ -19189,3 +19202,5 @@ blockquote .content .author {
     max-width: 100px;
   }
 }
+
+

@@ -124,6 +124,10 @@ const partnersSlider = new Swiper(".partners-slider", {
 
   allowTouchMove: false,
 });
+
+
+
+
     /*======================================
         Preloader activation
     ========================================*/
@@ -134,6 +138,8 @@ const partnersSlider = new Swiper(".partners-slider", {
             TextAnim.from(".text-animation-effect .char", { duration: 1, x: 50, autoAlpha: 0, stagger: 0.1 }, "-=1");
         }
     } 
+
+    
 
         /* ===============================
         Smooth Preloader
@@ -1641,6 +1647,36 @@ animateBars();
             });
         })
 
+
+
+        const projectGallerySlider = new Swiper(".project-gallery-slider", {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 0,
+
+    navigation: {
+        prevEl: ".project-gallery-slider .swiper-button-prev",
+        nextEl: ".project-gallery-slider .swiper-button-next",
+    },
+
+    pagination: {
+        el: ".project-gallery-slider .swiper-pagination",
+        clickable: true,
+    },
+
+    autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+    },
+
+    on: {
+        init: function () {
+            VenoBox.init({
+                selector: ".project-gallery-slider .venobox",
+            });
+        },
+    },
+});
         // Page Scroll Percentage
         function scrollTopPercentage() {
             const scrollPercentage = () => {

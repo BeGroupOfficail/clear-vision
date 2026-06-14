@@ -51,6 +51,59 @@ tabs.forEach(tab => {
 
 });
 
+// TOP SWIPER
+const galleryTop = new Swiper(".gallery-top", {
+    loop: true,
+    speed: 8000,
+    slidesPerView: "auto",
+    spaceBetween: 20,
+    allowTouchMove: true,
+
+    autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+    },
+});
+
+// BOTTOM SWIPER
+const galleryBottom = new Swiper(".gallery-bottom", {
+    loop: true,
+    speed: 8000,
+    slidesPerView: "auto",
+    spaceBetween: 20,
+    allowTouchMove: true,
+
+    autoplay: {
+        delay: 0,
+        reverseDirection: true,
+        disableOnInteraction: false,
+    },
+});
+
+gsap.registerPlugin(ScrollTrigger);
+// PARALLAX SCROLL EFFECT
+gsap.to(".gallery-top", {
+    x: 200,
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".gallary-section",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1
+    }
+});
+
+gsap.to(".gallery-bottom", {
+    x: -200,
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".gallary-section",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1
+    }
+});
+
 document.querySelectorAll(".gallery-scroll-wrap").forEach(track => {
 
     let isDown = false;

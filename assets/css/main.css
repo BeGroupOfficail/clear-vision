@@ -19141,3 +19141,51 @@ blockquote .content .author {
     display: block;
     pointer-events: none; /* مهم جدًا */
 }
+
+.partners-section {
+  overflow: hidden;
+}
+
+/* wrapper smooth motion */
+.partners-slider .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
+/* slide alignment */
+.partners-slider .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto !important;
+}
+
+/* logo style */
+.partners-slider img {
+  max-width: 90px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.partners-slider img:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+.partners-slider .swiper-wrapper {
+  will-change: transform;
+}
+/* 📱 Mobile */
+@media (max-width: 576px) {
+  .partners-slider img {
+    max-width: 110px;
+  }
+}
+
+/* 📱 Tablet */
+@media (max-width: 768px) {
+  .partners-slider img {
+    max-width: 100px;
+  }
+}

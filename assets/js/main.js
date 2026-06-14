@@ -1648,35 +1648,34 @@ animateBars();
         })
 
 
-
-        const projectGallerySlider = new Swiper(".project-gallery-slider", {
+const projectGallerySlider = new Swiper(".project-gallery-slider", {
     loop: true,
     slidesPerView: 1,
     spaceBetween: 0,
-
     navigation: {
         prevEl: ".project-gallery-slider .swiper-button-prev",
         nextEl: ".project-gallery-slider .swiper-button-next",
     },
-
     pagination: {
         el: ".project-gallery-slider .swiper-pagination",
         clickable: true,
     },
-
     autoplay: {
-        delay: 2000,
+        delay: 3000,
         disableOnInteraction: false,
     },
-
-    on: {
-        init: function () {
-            VenoBox.init({
-                selector: ".project-gallery-slider .venobox",
-            });
-        },
-    },
 });
+
+// فتح VenoBox على الصورة الصح لما تضغط على الـ slide
+document.querySelector(".project-gallery-slider").addEventListener("click", function () {
+    const realIndex = projectGallerySlider.realIndex;
+    const venoLinks = document.querySelectorAll(".project-veno-gallery .venobox");
+    if (venoLinks[realIndex]) {
+        venoLinks[realIndex].click();
+    }
+});
+
+
         // Page Scroll Percentage
         function scrollTopPercentage() {
             const scrollPercentage = () => {

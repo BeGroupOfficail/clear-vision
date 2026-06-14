@@ -2856,7 +2856,6 @@ ul {
 .header .primary-header-inner .header-left-wrap {
     display: flex;
     align-items: center;
-    column-gap: 50px;
 }
 
 .header .primary-header-inner .header-logo img {
@@ -17548,15 +17547,8 @@ blockquote .content .author {
     }
 }
 
-@media only screen and (max-width: 767px) {
-    .footer-widget {
-        margin-bottom:50px
-    }
-}
 
-.footer-widget .widget-header {
-    margin-bottom: 30px
-}
+
 
 .footer-widget .widget-header .footer-logo {
     max-width: 170px
@@ -18285,9 +18277,7 @@ blockquote .content .author {
 }
 /* Copyright */
 .copyright-area{
-    margin-top:80px;
     border-top:1px solid rgba(255,255,255,.08);
-    padding:25px 0;
 }
 
 .copyright-content p{

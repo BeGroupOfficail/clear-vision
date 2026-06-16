@@ -1,4 +1,4 @@
-﻿@import"https://fonts.googleapis.com/css2?family=Cal+Sans&family=Golos+Text:wght@400..900&display=swap";:root {
+@import"https://fonts.googleapis.com/css2?family=Cal+Sans&family=Golos+Text:wght@400..900&display=swap";:root {
     --tl-ff-body: 'Golos Text', sans-serif;
     --tl-ff-heading: 'Cal Sans', serif;
     --tl-ff-p: 'Golos Text', sans-serif;
@@ -2823,7 +2823,7 @@ ul {
     color: #111;
 }
 .header {
-    background-color: rgba(0,0,0,0);
+    background-color: #ffffff;
     width: 100%;
     position: absolute;
     top: 0;
@@ -2832,8 +2832,8 @@ ul {
     transition: all .3s ease-in-out;
     display: flex;
     align-items: center;
-    
     height: 100px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
 }
 
 @media only screen and (max-width: 992px) {
@@ -2859,9 +2859,10 @@ ul {
 }
 
 .header .primary-header-inner .header-logo img {
-    width: 120px;
-    padding-top: 25px;
-    margin-right:150px;
+    width: 200px;
+    padding-top: 10px;
+    margin-right: 80px;
+    width: 300px;
 }
 
 .header .primary-header-inner .header-logo .logo-light {
@@ -2870,13 +2871,13 @@ ul {
 
 @media(max-width: 1399px) {
     .header .primary-header-inner .header-logo img {
-        max-width:150px
+        max-width: 180px
     }
 }
 
 @media(max-width: 1199px) {
     .header .primary-header-inner .header-logo img {
-        max-width:150px
+        max-width: 160px
     }
 }
 
@@ -2925,7 +2926,7 @@ ul {
 
 .header .primary-header-inner .header-menu-wrap ul li a {
     font-family: var(--tl-ff-heading);
-    color: var(--tl-color-common-white);
+    color: #1a1a1a;
     display: block;
     font-size: 20px;
     padding: 36px 0;
@@ -3135,8 +3136,8 @@ ul {
     font-family: "Font Awesome 6 Pro";
     font-size: 12px;
     font-weight: 700;
-    content: "";
-    color: var(--tl-color-common-white);
+    content: "";
+    color: #1a1a1a;
     position: absolute;
     top: 50%;
     right: 0;
@@ -3664,7 +3665,7 @@ ul {
 }
 
 .primary-header.fixed {
-    background-color: var(--tl-color-bg-2);
+    background-color: #ffffff;
     position: fixed;
     left: 0;
     top: 0;
@@ -3674,7 +3675,7 @@ ul {
     -webkit-animation-duration: 1s;
     animation-timing-function: ease;
     -webkit-animation-timing-function: ease;
-    box-shadow: 0px 1px 3px 0px rgba(17,17,17,.1);
+    box-shadow: 0px 2px 20px 0px rgba(17,17,17,.1);
     z-index: 99
 }
 
@@ -17551,7 +17552,13 @@ blockquote .content .author {
 
 
 .footer-widget .widget-header .footer-logo {
-    max-width: 170px
+    max-width: 220px;
+    margin-bottom: 15px;
+}
+
+.footer-widget .widget-header .footer-logo img {
+    width: 220px;
+    max-width: 100%;
 }
 
 .footer-widget .widget-header .widget-title {
